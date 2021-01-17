@@ -20,7 +20,7 @@ const CommonConfig: ConfigNode = {};
  */
 const EnvConfig: Prop = {
   development: {
-    API_HOST: "http://localhost:3001",
+    API_HOST: "https://login-server-demo-app.herokuapp.com",
     API_PATH: "/auth",
   },
   production: {
