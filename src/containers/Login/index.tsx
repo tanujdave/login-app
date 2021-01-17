@@ -12,7 +12,7 @@ import {
   BottomLink,
   Label,
 } from "./style";
-import { login } from "./service";
+import { login, logout } from "./service";
 
 type FormInputs = {
   email: string;
@@ -22,6 +22,9 @@ type FormInputs = {
 const Login: React.FC = () => {
   const { register, handleSubmit, errors }: any = useForm<FormInputs>();
   const [loading, setLoading] = useState<boolean>(false);
+  const [logging, setLogging] = useState<boolean>(
+    !!localStorage.getItem("userToken")
+  );
   const [error, setError] = useState<string>("");
 
   const handleAuthUser = async (data: any) => {
@@ -29,13 +32,41 @@ const Login: React.FC = () => {
     setError("");
     try {
       const token = await login(data);
-      alert(token);
+      localStorage.setItem("userToken", token);
+      setLogging(true);
     } catch (err) {
       setError(err.message);
     } finally {
       setLoading(false);
     }
   };
+
+  const handleLogout = () => {
+    logout();
+    setLogging(false);
+  };
+
+  if (logging) {
+    return (
+      <LoginPage>
+        <Container>
+          <BoxLogin style={{ textAlign: "center" }}>
+            <Title>Login Successfully!</Title>
+            <img
+              style={{ padding: "40px", width: "60%" }}
+              src="https://cdn4.iconfinder.com/data/icons/logistic-delivery-17/40/Done_ok_success_tick_check-512.png"
+              alt="Success"
+            />
+            <BottomLink>
+              <Button href="#" kind="link" onClick={handleLogout}>
+                Logout
+              </Button>
+            </BottomLink>
+          </BoxLogin>
+        </Container>
+      </LoginPage>
+    );
+  }
 
   return (
     <LoginPage>

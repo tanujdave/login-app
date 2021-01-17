@@ -14,10 +14,16 @@ export const login = async ({
     const resp = await post(path, { email, password, remember_me });
     const result = resp.data;
     if (!result.token) {
-      throw new Error("The email address or password you entered is incorrect.");
+      throw new Error(
+        "The email address or password you entered is incorrect."
+      );
     }
     return result.token;
   } catch (err) {
     throw new Error(err.message);
   }
+};
+
+export const logout = () => {
+  localStorage.removeItem("userToken");
 };
