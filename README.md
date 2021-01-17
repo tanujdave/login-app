@@ -1,6 +1,6 @@
 ## Login App
 
-- Login app demo https://login-react-demo-app.herokuapp.com
+- Login app demo https://login-react-demo-app.herokuapp.com (testing credentials email: demo@mail.com / password: demo)
 
 - Login app github repo https://github.com/tanujdave/login-app
 
