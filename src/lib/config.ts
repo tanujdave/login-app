@@ -20,12 +20,12 @@ const CommonConfig: ConfigNode = {};
  */
 const EnvConfig: Prop = {
   development: {
-    API_HOST: "https://6001a30308587400174db2f6.mockapi.io/",
-    API_PATH: "/api/v1/",
+    API_HOST: "http://localhost:3001",
+    API_PATH: "/auth",
   },
   production: {
-    API_HOST: "https://6001a30308587400174db2f6.mockapi.io/",
-    API_PATH: "/api/v1/",
+    API_HOST: "https://login-server-demo-app.herokuapp.com",
+    API_PATH: "/auth",
   },
 };
 

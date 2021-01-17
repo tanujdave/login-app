@@ -29,7 +29,7 @@ const Login: React.FC = () => {
     setError("");
     try {
       const token = await login(data);
-      alert("login successfully!");
+      alert(token);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -44,7 +44,7 @@ const Login: React.FC = () => {
           <Title>Sign in</Title>
           <form onSubmit={handleSubmit(handleAuthUser)}>
             {error && <ErrorMessage>{error}</ErrorMessage>}
-            {Object.keys(errors).length > 0 && (
+            {"" === error && Object.keys(errors).length > 0 && (
               <ErrorMessage
                 dangerouslySetInnerHTML={{
                   __html: Object.entries(errors).reduce(
