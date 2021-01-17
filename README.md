@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+## Login App Screen
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Todo
 
-## Available Scripts
+- [x] Design login form in react .
+- [x] Setup login api.
+- [x] Add login form validation.
+- [x] Used styled-component react library for LESS/SASS.
+- [x] Used react-hooks-form for setup login form.
+- [x] Pushed code to github.
 
-In the project directory, you can run:
+### Bonus
 
-### `yarn start`
+- [x] Deployed app on heroku server.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Tech Stack
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Frontend
+- Reactjs
+- typescript
+- Styled-components
+- react-hook-form
+### Backend
+- Node
+- typescript
+- express
+- JWT
 
-### `yarn test`
+## Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clone the project from `https://github.com/tanujdave/login-app.git` using SSH or HTTPS.
 
-### `yarn build`
+### **Install dependencies**
+```sh
+yarn install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Start server**
+```sh
+yarn start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Note: Just hit `http://localhost:3000` address into browser.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## Project structure
+#### **/src**
+- `index.tsx` The main application bootstrap file.
+- `App.tsx` This App is main application initializer that application theme and basic containers.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### **/src/components**
+- `Button` The basic button component.
+- `Checkbox` The basic form checkbox component.
+- `Input` The basic form input component.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **/src/containers**
+- `Login` This is the login container that contain all the view and business logic.
+- `Login/index.tsx` This is the main login container that load the login screen.
+- `Login/service.ts` This service file contains all api services related to logi module.
+- `Login/style.ts` This style file contains all login module styling.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### **/src/lib**
+ - `theme/global.tsx` This global file include all the default styling.
+ - `config.ts` The main application configuration that load based on the environment.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### **/src/utils**
+- `api.tsx` This api utils contains all the api related helper function that wrap around axios library.
